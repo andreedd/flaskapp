@@ -30,7 +30,9 @@ jobs:
         repository: ddeeh/flaskapp
         tags: latest 
       
-    - name: Login to Heroku Container registry
-      env: 
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:login 
+    - uses: akhileshns/heroku-deploy@v3.0.5 # This is the action
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "flaskops"
+        heroku_email: "ddeeh2@gmail.com"
+        usedocker: true
