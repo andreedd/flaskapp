@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app/
 
-RUN pip install -U Flask
+RUN pip install flask gunicorn
 
 ENV FLASK_APP=app.py
 
